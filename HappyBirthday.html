@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>好姐妹葛之葉千岁，生日快乐！</title>
+    <link rel="icon" type="image/x-icon" href="./img/ChiTose.ico">
+    <style>
+        @font-face {
+            font-family: 'AstroFont';
+            src: url(./font/JingNanBoBoHei-Bold-2.ttf);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'AstroFont';
+            background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+            color: #333;
+            min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
+        }
+        
+        .container {
+            display: flex;
+            width: 100%;
+            height: 100vh;
+            margin: 0 auto;
+            padding: 40px 20px;
+            text-align: center;
+            position: relative;
+            z-index: 10;
+            justify-content: center;
+            align-items: center;
+            pointer-events: none;
+        }
+        
+        .container *{
+            user-select: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+        }
+
+        .content img{
+            pointer-events: none;
+        }
+
+        .content{
+            display: block;
+            width: 20%;
+            z-index: 11;
+        }
+
+        .content img{
+            width: 100%
+        }
+
+        .subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 40px;
+            color: #a0522d;
+        }
+             
+        .cake {
+            position: fixed;
+            top: -50px;
+            font-size: 2rem;
+            z-index: 1;
+            user-select: none;
+            pointer-events: none;
+            opacity: 0.9;
+            animation-timing-function: linear, ease-in-out;
+            animation-iteration-count: infinite;
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            .subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .cake {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="content"><p>好姐妹葛之葉千岁</p><img src="./img/ChiTose.png"><p>2026.1.19</p><p>祝你生日快乐！</p></div>
+    </div>
+
+    <script>
+        const cakes = ['🎂', '🍰', '🧁', '🥮', '🎂', '🍰', '🧁', '🥮', '🍮', '🍩', '🍪'];
+        
+        function createCakeRain() {
+            const cake = document.createElement('div');
+            cake.className = 'cake';
+            cake.innerHTML = cakes[Math.floor(Math.random() * cakes.length)];
+            
+            const startPosition = Math.random() * window.innerWidth;
+            cake.style.left = `${startPosition}px`;
+            
+            const size = 20 + Math.random() * 30;
+            cake.style.fontSize = `${size}px`;
+            
+            const fallDuration = 5 + Math.random() * 10;
+            const swingDuration = 1 + Math.random() * 2;
+            
+            const rotation = Math.random() * 360;
+            cake.style.transform = `rotate(${rotation}deg)`;
+            
+            cake.style.animation = `fall ${fallDuration}s linear infinite, swing ${swingDuration}s ease-in-out infinite`;
+            
+            document.body.appendChild(cake);
+            
+            setTimeout(() => {
+                if (cake.parentNode) {
+                    cake.parentNode.removeChild(cake);
+                }
+            }, fallDuration * 1000);
+        }
+        
+        function generateCakes() {
+            for (let i = 0; i < 20; i++) {
+                setTimeout(() => createCakeRain(), i * 300);
+            }
+            
+            setInterval(() => {
+                createCakeRain();
+            }, 500);
+        }
+        
+        window.addEventListener('DOMContentLoaded', () => {
+            generateCakes();
+            
+            const styleSheet = document.createElement('style');
+            styleSheet.textContent = `
+                @keyframes fall {
+                    0% {
+                        top: -50px;
+                        transform: rotate(0deg);
+                    }
+                    100% {
+                        top: 100vh;
+                        transform: rotate(360deg);
+                    }
+                }
+                
+                @keyframes swing {
+                    0%, 100% {
+                        transform: translateX(0) rotate(var(--rotation, 0deg));
+                    }
+                    50% {
+                        transform: translateX(20px) rotate(var(--rotation, 0deg));
+                    }
+                }
+            `;
+            document.head.appendChild(styleSheet);
+        });
+        
+        window.addEventListener('resize', () => {
+            const cakes = document.querySelectorAll('.cake');
+            cakes.forEach(cake => {
+                const currentLeft = parseFloat(cake.style.left);
+                if (currentLeft > window.innerWidth) {
+                    cake.style.left = `${Math.random() * window.innerWidth}px`;
+                }
+            });
+        });
+    </script>
+</body>
+</html>
