@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>骰骰乐</title>
+    <link rel="icon" type="image/x-icon" href="../img/Icon.ico">
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="DiceContainer">
+        <div id="ActDicePoints">0</div>
+        <img id="ActDice" src="https://patchwiki.biligame.com/images/starengine/4/47/sfwu7eiag44h3av5dy2tb5u2kgm8u42.png" alt="ActDice">
+        <img id="ActDiceMap" src="https://patchwiki.biligame.com/images/starengine/a/a7/tqnp90tctibjdhicpuidgqf6w7cg32q.png" alt="ActivityDice Map">
+        <div style="display:flex;position:absolute;left:70px;top:50px;">
+            <div style="position: relative;">
+                <span class="ActDiceCell">1</span>
+                <img src="https://patchwiki.biligame.com/images/starengine/2/23/3lqpu6e2rntzsa5slbm7axmu9paywrv.png" class="ActDiceCellImg">
+            </div>
+        </div>
+        <div style="display:flex;position:absolute;left:200px;top:50px;">
+            <div style="position: relative;">
+                <span class="ActDiceCell">2</span>
+                <img src="https://patchwiki.biligame.com/images/starengine/f/fc/p7g47ewbg9ipq90445g7edb0afx1e6x.png" class="ActDiceCellImg">
+            </div>
+        </div>
+        <div style="display:flex;position:absolute;left:330px;top:50px;">
+            <div style="position: relative;">
+                <span class="ActDiceCell">3</span>
+                <img src="https://patchwiki.biligame.com/images/starengine/8/82/rz85gvwx1i1mmbohdq5dmdglet4b2by.png" class="ActDiceCellImg">
+            </div>
+        </div>
+        <div style="display:flex;position:absolute;left:460px;top:50px;">
+            <div style="position: relative;">
+                <span class="ActDiceCell">4</span>
+                <img src="https://patchwiki.biligame.com/images/starengine/f/f3/1rj470fj7oownhy4xgyf6q9w9m27lrn.png" class="ActDiceCellImg">
+            </div>
+        </div>
+        <div style="display:flex;position:absolute;left:590px;top:50px;">
+            <div style="position: relative;">
+                <span class="ActDiceCell">5</span>
+                <img src="https://patchwiki.biligame.com/images/starengine/f/fc/p7g47ewbg9ipq90445g7edb0afx1e6x.png" class="ActDiceCellImg">
+            </div>
+        </div>
+        <div style="display:flex;position:absolute;left:70px;top:180px;">
+            <div style="position: relative;">
+                <span class="ActDiceCell">24</span><img>
+                <img src="https://patchwiki.biligame.com/images/starengine/f/fc/p7g47ewbg9ipq90445g7edb0afx1e6x.png" class="ActDiceCellImg">
+            </div>
+        </div>
+        <div style="display:flex;position:absolute;left:200px;top:180px;">
+            <div style="position: relative;">
+                <span class="ActDiceCell">23</span>
+                <img src="https://patchwiki.biligame.com/images/starengine/f/fc/p7g47ewbg9ipq90445g7edb0afx1e6x.png" class="ActDiceCellImg">
+            </div>
+        </div>
+        <div style="display:flex;position:absolute;left:330px;top:180px;">
+            <div style="position: relative;">
+                <span class="ActDiceCell">22</span>
+                <img src="https://patchwiki.biligame.com/images/starengine/8/82/rz85gvwx1i1mmbohdq5dmdglet4b2by.png" class="ActDiceCellImg">
+            </div>
+        </div>
+        <div style="display:flex;position:absolute;left:460px;top:180px;">
+            <div style="position: relative;">
+                <span class="ActDiceCell">21</span>
+                <img src="https://patchwiki.biligame.com/images/starengine/f/fc/p7g47ewbg9ipq90445g7edb0afx1e6x.png" class="ActDiceCellImg">
+            </div>
+        </div>
+        <div style="display:flex;position:absolute;left:590px;top:180px;">
+            <div style="position: relative;">
+                <span class="ActDiceCell">6</span>
+                <img src="https://patchwiki.biligame.com/images/starengine/f/fc/p7g47ewbg9ipq90445g7edb0afx1e6x.png" class="ActDiceCellImg">
+            </div>
+        </div>
+        <div style="display:flex;position:absolute;left:70px;top:310px;">
+            <div style="position: relative;">
+                <span class="ActDiceCell">17</span><img>
+                <img src="https://patchwiki.biligame.com/images/starengine/f/f3/1rj470fj7oownhy4xgyf6q9w9m27lrn.png" class="ActDiceCellImg">
+            </div>
+        </div>
+        <div style="display:flex;position:absolute;left:200px;top:310px;">
+            <div style="position: relative;">
+                <span class="ActDiceCell">18</span>
+                <img src="https://patchwiki.biligame.com/images/starengine/f/fc/p7g47ewbg9ipq90445g7edb0afx1e6x.png" class="ActDiceCellImg">
+            </div>
+        </div>
+        <div style="display:flex;position:absolute;left:330px;top:310px;">
+            <div style="position: relative;">
+                <span class="ActDiceCell">19</span>
+                <img src="https://patchwiki.biligame.com/images/starengine/d/d4/jk9xzifywg07cjuromu32ifsj9qiqjq.png" class="ActDiceCellImg">
+            </div>
+        </div>
+        <div style="display:flex;position:absolute;left:460px;top:310px;">
+            <div style="position: relative;">
+                <span class="ActDiceCell">20</span>
+                <img src="https://patchwiki.biligame.com/images/starengine/f/fc/p7g47ewbg9ipq90445g7edb0afx1e6x.png" class="ActDiceCellImg">
+            </div>
+        </div>
+        <div style="display:flex;position:absolute;left:590px;top:310px;">
+            <div style="position: relative;">
+                <span class="ActDiceCell">7</span>
+                <img src="https://patchwiki.biligame.com/images/starengine/d/d4/jk9xzifywg07cjuromu32ifsj9qiqjq.png" class="ActDiceCellImg">
+            </div>
+        </div>
+        <div style="display:flex;position:absolute;left:70px;top:440px;">
+            <div style="position: relative;">
+                <span class="ActDiceCell">16</span><img>
+                <img src="https://patchwiki.biligame.com/images/starengine/f/fc/p7g47ewbg9ipq90445g7edb0afx1e6x.png" class="ActDiceCellImg">
+            </div>
+        </div>
+        <div style="display:flex;position:absolute;left:200px;top:440px;">
+            <div style="position: relative;">
+                <span class="ActDiceCell">15</span>
+                <img src="https://patchwiki.biligame.com/images/starengine/8/82/rz85gvwx1i1mmbohdq5dmdglet4b2by.png" class="ActDiceCellImg">
+            </div>
+        </div>
+        <div style="display:flex;position:absolute;left:330px;top:440px;">
+            <div style="position: relative;">
+                <span class="ActDiceCell">14</span>
+                <img src="https://patchwiki.biligame.com/images/starengine/f/fc/p7g47ewbg9ipq90445g7edb0afx1e6x.png" class="ActDiceCellImg">
+            </div>
+        </div>
+        <div style="display:flex;position:absolute;left:460px;top:440px;">
+            <div style="position: relative;">
+                <span class="ActDiceCell">13</span>
+                <img src="https://patchwiki.biligame.com/images/starengine/d/d4/jk9xzifywg07cjuromu32ifsj9qiqjq.png" class="ActDiceCellImg">
+            </div>
+        </div>
+        <div style="display:flex;position:absolute;left:590px;top:440px;">
+            <div style="position: relative;">
+                <span class="ActDiceCell">8</span>
+                <img src="https://patchwiki.biligame.com/images/starengine/8/82/rz85gvwx1i1mmbohdq5dmdglet4b2by.png" class="ActDiceCellImg">
+            </div>
+        </div>
+        <div style="display:flex;position:absolute;left:460px;top:570px;">
+            <div style="position: relative;">
+                <span class="ActDiceCell">12</span>
+                <img src="https://patchwiki.biligame.com/images/starengine/f/fc/p7g47ewbg9ipq90445g7edb0afx1e6x.png" class="ActDiceCellImg">
+            </div>
+        </div>
+        <div style="display:flex;position:absolute;left:590px;top:570px;">
+            <div style="position: relative;">
+                <span class="ActDiceCell">9</span>
+                <img src="https://patchwiki.biligame.com/images/starengine/f/fc/p7g47ewbg9ipq90445g7edb0afx1e6x.png" class="ActDiceCellImg">
+            </div>
+        </div>
+        <div style="display:flex;position:absolute;left:460px;top:700px;">
+            <div style="position: relative;">
+                <span class="ActDiceCell">11</span>
+                <img src="https://patchwiki.biligame.com/images/starengine/f/fc/p7g47ewbg9ipq90445g7edb0afx1e6x.png" class="ActDiceCellImg">
+            </div>
+        </div>
+        <div style="display:flex;position:absolute;left:590px;top:700px;">
+            <div style="position: relative;">
+                <span class="ActDiceCell">10</span>
+                <img src="https://patchwiki.biligame.com/images/starengine/f/f3/1rj470fj7oownhy4xgyf6q9w9m27lrn.png" class="ActDiceCellImg">
+            </div>
+        </div>
+        <img id="ActDiceMovement" src="https://patchwiki.biligame.com/images/starengine/1/1a/5w6nfgtwnb4o5h7cg9q4diu0mm3txlu.png" alt="ActivityDice Movement">
+        <div id="ActDiceButtonWrapper">
+            <span id="ActDiceLap">第 0 圈</span>
+            <div id="ActDiceTrigger">
+                <img id="ActDiceButton" src="https://patchwiki.biligame.com/images/starengine/9/9c/h076zojl6bgman2l0klbk8pfxrwmibm.png" alt="ActivityDice Button">
+                <span id="ActDiceDesc">投骰子</span>
+                <span id="ActDiceNum"><img src="https://patchwiki.biligame.com/images/starengine/b/b3/6c0sj0gq3oe17htlal0blxhg8sgoviu.png" alt="ActivityDice Dice" width="50px" height="50px">放开玩吧！</span>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="./script.js"></script>
+</body>
+</html>

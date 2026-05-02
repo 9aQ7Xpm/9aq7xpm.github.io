@@ -1,0 +1,96 @@
+@import url("https://fontsapi.zeoseven.com/298/main/result.css");
+
+.DiceContainer {
+    display: flex;
+    position: relative;
+    font-family: '荆南波波黑', Arial, Helvetica, sans-serif;
+    width: 888px;
+    height: 845px;
+}
+#ActDice {
+    position:absolute;
+    width:100px;
+    left:70px;
+    top:50px;
+    z-index:3;
+}
+#ActDiceMap {
+    position: absolute;
+    left: 0px;
+    top: 0px; 
+}
+#ActDiceMovement {
+    position: absolute;
+    left: 70px;
+    bottom: 5px; 
+}
+#ActDiceButtonWrapper {
+    position: absolute;
+    left: 113px;
+    bottom: 20px; 
+}
+#ActDiceLap {
+    position: absolute;
+    left: 50px;
+    bottom: 150px;
+    font-size: 45px;
+    color: white;
+}
+#ActDiceDesc {
+    position: absolute;
+    left: 60px;
+    bottom: 65px;
+    font-size: 45px;
+    color: white;
+    -webkit-text-stroke: 2px black;
+}
+#ActDiceNum {
+    display: flex;
+    position: absolute;
+    left: 30px;
+    bottom: 20px;
+    font-size: 30px;
+    white-space: nowrap;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    -webkit-text-stroke: 2px black;
+}
+#ActDiceTrigger:active {
+    transform:translateY(4px) scale(0.80);
+}
+.ActDiceCell {
+    position: absolute;
+    left:-10px;
+    top:-20px;
+    font-size:40px;
+    color:white;
+    text-shadow: 3px 0 0 #D68CB2, 2.77px 1.15px 0 #D68CB2, 2.12px 2.12px 0 #D68CB2, 1.15px 2.77px 0 #D68CB2, 0 3px 0 #D68CB2, -1.15px 2.77px 0 #D68CB2, -2.12px 2.12px 0 #D68CB2, -2.77px 1.15px 0 #D68CB2, -3px 0 0 #D68CB2, -2.77px -1.15px 0 #D68CB2, -2.12px -2.12px 0 #D68CB2, -1.15px -2.77px 0 #D68CB2, 0 -3px 0 #D68CB2, 1.15px -2.77px 0 #D68CB2, 2.12px -2.12px 0 #D68CB2, 2.77px -1.15px 0 #D68CB2;
+    font-weight: bold;
+}
+.ActDiceCellImg {
+    position: absolute;
+    left: 59px;
+    top: 57px;
+    min-width: 50px;
+    height: 49px;
+}
+#ActDicePoints {
+    position: absolute;
+    left: 280px;
+    top: 260px;
+    width: 188px;
+    height: 188px;
+    background-color: red;
+    border: 8px solid #000000;
+    border-radius: 100px;
+    outline: 4px solid #646464;
+    color: black;
+    font-family: '荆南波波黑', Arial, Helvetica, sans-serif;
+    display: none;
+    font-size: 160px;
+    justify-content: center;
+    align-items: center;
+    -webkit-text-stroke: 2px white;
+    z-index: 4;
+}
