@@ -8,7 +8,9 @@
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-    <div class="DiceContainer">
+    <div class="ActDiceWrapper">
+        <div class="DiceContainer">
+        <!-- 3D骰子 - 所有面初始为 ？图片 -->
         <div id="ActDicePoints">
             <div class="dice">
                 <div class="face front"><img src="https://patchwiki.biligame.com/images/starengine/6/6f/j8ndy6ddgrhxv5s3atkswkcqku46ufk.png" alt="?"></div>
@@ -53,7 +55,7 @@
         </div>
         <div style="display:flex;position:absolute;left:70px;top:180px;">
             <div style="position: relative;">
-                <span class="ActDiceCell">24</span><img>
+                <span class="ActDiceCell">24</span>
                 <img src="https://patchwiki.biligame.com/images/starengine/f/fc/p7g47ewbg9ipq90445g7edb0afx1e6x.png" class="ActDiceCellImg">
             </div>
         </div>
@@ -83,7 +85,7 @@
         </div>
         <div style="display:flex;position:absolute;left:70px;top:310px;">
             <div style="position: relative;">
-                <span class="ActDiceCell">17</span><img>
+                <span class="ActDiceCell">17</span>
                 <img src="https://patchwiki.biligame.com/images/starengine/f/f3/1rj470fj7oownhy4xgyf6q9w9m27lrn.png" class="ActDiceCellImg">
             </div>
         </div>
@@ -113,7 +115,7 @@
         </div>
         <div style="display:flex;position:absolute;left:70px;top:440px;">
             <div style="position: relative;">
-                <span class="ActDiceCell">16</span><img>
+                <span class="ActDiceCell">16</span>
                 <img src="https://patchwiki.biligame.com/images/starengine/f/fc/p7g47ewbg9ipq90445g7edb0afx1e6x.png" class="ActDiceCellImg">
             </div>
         </div>
@@ -173,6 +175,10 @@
                 <span id="ActDiceDesc">投骰子</span>
                 <span id="ActDiceNum"><img src="https://patchwiki.biligame.com/images/starengine/b/b3/6c0sj0gq3oe17htlal0blxhg8sgoviu.png" alt="ActivityDice Dice" width="50px" height="50px">放开玩吧！</span>
             </div>
+        </div>
+        </div>
+        <div class="RewardContainer">
+            <span style="font-size:40px;">点击“投骰子”开始游戏！</span>
         </div>
     </div>
     <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>

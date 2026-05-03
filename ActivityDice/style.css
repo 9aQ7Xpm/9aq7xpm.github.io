@@ -1,5 +1,43 @@
 @import url("https://fontsapi.zeoseven.com/298/main/result.css");
 
+@media screen and (max-width:768px){
+.ActDiceWrapper{
+    display:flex;
+    flex-direction:column;
+    border:1px black solid;
+    border-radius:10px;
+    align-items:center;
+    padding:10px 0 10px 0;
+    zoom:0.35;
+    background-color: #FFE6A8;
+    overflow: hidden;
+}
+}
+@media screen and (min-width:769px){
+.ActDiceWrapper{
+    display:flex;
+    flex-direction:column;
+    border:1px black solid;
+    border-radius:10px;
+    align-items:center;
+    padding:10px 0 10px 0;
+    zoom:0.85;
+    background-color: #FFE6A8;
+    overflow: hidden;
+}
+}
+
+.RewardContainer{
+    padding: 3px;
+    display:flex;
+    width:100%;
+    align-items: center;
+    justify-content:center;
+    flex-direction: column;
+    font-family: '荆南波波黑', Arial, Helvetica, sans-serif;
+    margin-top: 20px;
+    background-color: rgba(200,200,200,0.8);
+}
 .DiceContainer {
     display: flex;
     position: relative;
@@ -75,6 +113,7 @@
     min-width: 50px;
     height: 49px;
 }
+
 /* ========== 3D骰子 ========== */
 #ActDicePoints {
     position: absolute;
