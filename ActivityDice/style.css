@@ -75,22 +75,58 @@
     min-width: 50px;
     height: 49px;
 }
+/* ========== 3D骰子 ========== */
 #ActDicePoints {
     position: absolute;
     left: 280px;
     top: 260px;
     width: 188px;
     height: 188px;
-    background-color: red;
-    border: 8px solid #000000;
-    border-radius: 100px;
-    outline: 4px solid #646464;
-    color: black;
-    font-family: '荆南波波黑', Arial, Helvetica, sans-serif;
-    display: none;
-    font-size: 160px;
+    display: none;                
     justify-content: center;
     align-items: center;
-    -webkit-text-stroke: 2px white;
     z-index: 4;
+    perspective: 400px;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: transparent;
+    font-size: 0;
 }
+
+#ActDicePoints .dice {
+    width: 120px;
+    height: 120px;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 1.2s cubic-bezier(0.23, 1, 0.32, 1);
+    transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+}
+
+#ActDicePoints .face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: white;
+    border-radius: 12px;
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backface-visibility: hidden;
+}
+
+#ActDicePoints .face img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 12px;
+}
+
+/* 六个面的空间位置 */
+#ActDicePoints .front  { transform: translateZ(60px); }
+#ActDicePoints .back   { transform: rotateY(180deg) translateZ(60px); }
+#ActDicePoints .right  { transform: rotateY(90deg) translateZ(60px); }
+#ActDicePoints .left   { transform: rotateY(-90deg) translateZ(60px); }
+#ActDicePoints .top    { transform: rotateX(90deg) translateZ(60px); }
+#ActDicePoints .bottom { transform: rotateX(-90deg) translateZ(60px); }
