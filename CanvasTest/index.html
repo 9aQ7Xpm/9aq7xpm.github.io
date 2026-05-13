@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>替换测试</title>
+</head>
+<body>
+    <input type="file" id="ImgUpload">
+    <canvas id="MyCanvas" width="248" height="248" style="border:1px solid #ccc;"></canvas>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+const canvas = $('#MyCanvas')[0];
+const ctx = canvas.getContext('2d');
+const bgImg = new Image();
+bgImg.src = './canvasImg/photo.png';
+
+$('#ImgUpload').on('change', function(e) {
+    const file = this.files[0];
+    const UpedImg = new Image();
+    UpedImg.src = URL.createObjectURL(file);
+    
+    UpedImg.onload = function() {
+
+        
+        ctx.clearRect(0, 0, 248, 248);
+        ctx.drawImage(UpedImg, 0, 0, 248, 248);
+        
+        const imageData = ctx.getImageData(0, 0, 248, 248);
+        const data = imageData.data;
+        for(let i = 0; i < data.length; i += 4) {
+            const r = data[i];
+            const g = data[i+1];
+            const b = data[i+2];
+            const a = data[i+3];
+            
+            if(a === 0) {
+                // 透明变白
+                data[i] = 255;
+                data[i+1] = 255;
+                data[i+2] = 255;
+                data[i+3] = 255;
+            } else if(r+g+b>4) {
+                data[i+3] = 0;
+            }
+        }
+        ctx.putImageData(imageData, 0, 0);
+        
+        const step2Img = new Image();
+        step2Img.src = canvas.toDataURL();
+        
+        step2Img.onload = function() {
+            ctx.clearRect(0, 0, 248, 248);
+            ctx.drawImage(bgImg, 0, 0, 248, 248);
+            ctx.drawImage(step2Img, 0, 0, 248, 248);
+            
+            const finalData = ctx.getImageData(0, 0, 248, 248);
+            const finalPixel = finalData.data;
+            for(let i = 0; i < finalPixel.length; i += 4) {
+                const r = finalPixel[i];
+                const g = finalPixel[i+1];
+                const b = finalPixel[i+2];
+                if(r > 250 && g > 250 && b > 250) {
+                    finalPixel[i+3] = 0;
+                }
+            }
+            ctx.putImageData(finalData, 0, 0);
+        };
+    };
+});
+    </script>
+</body>
+</html>
