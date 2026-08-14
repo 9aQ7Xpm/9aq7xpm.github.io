@@ -66,8 +66,8 @@ async function getFileURL(ID = '102') {
 
 function randomNumber2string(){
     const rand = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
-    const choice = rand(0, 1);
-    let result = choice === 0 ? rand(101, 129) : rand(301, 304);
+    const choice = rand(1, 33);
+    let result = choice <= 29 ? rand(101, 129) : rand(301, 304);
     return String(result)
 }
 
