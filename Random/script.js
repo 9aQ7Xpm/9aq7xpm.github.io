@@ -1,5 +1,7 @@
 const ranButton = document.querySelector('#Start-Button');
 const charaContainer = document.querySelector('#Character-Container'); 
+const charaImg = document.querySelectorAll('.Character-Img');
+const playerText = document.querySelectorAll('.Player-Character');
 // certain way which is more clever should be used to replace such an idiot hash map i think
 // wtf can someone type such a long && useless one!?
 const charaMap = {
@@ -71,32 +73,24 @@ function randomNumber2string(){
     return String(result)
 }
 
-function generateCharacterBox(src = null, ID = undefined, seat = -1){
-    const altText = "Here happened some bugs. Plz connect with the admin 9aQ7Xpm!"
-    const number2Chinese = {
-        "-1" : "undefined",
-        "0" : "一",
-        "1" : "二",
-        "2" : "三",
-        "3" : "四"
-    }
-    charaContainer.innerHTML += `
-        <div class="Character">
-            <img src="${src}" alt = "${altText} Your Character is ${charaMap[ID]}">
-            <span class="characterText">您的座次为${number2Chinese[seat]}号位</span>
-            <span class="characterText">您的角色为${charaMap[ID]}</span>
-        </div>
-    `;
-    console.log(`Generate charaContainer_${seat} succeeded.`)
+function generateCharacter(src = null, ID = undefined, seat = -1){
+    const altText = "If you see this text, here might happen some bugs. Plz connect with the admin 9aQ7Xpm!"
+    charaImg[seat].src = src;
+    playerText[seat].innerHTML = `您的角色为${charaMap[ID]}`;
+    console.log(`Generate Character Container ${seat} succeeded.`)
 }
 
 function cleanUp(){
-    charaContainer.innerHTML = '';
+    for (const text of playerText) {
+        text.innerHTML = '正在随机角色……';
+    }
     console.log('Make cleanup succeed.');
 }
 
-async function init() {
-    let examineMap = []
+async function randomCharacter() {
+    let examineMap = [];
+    let characterSrcMap = {};
+    let times = 0;
     cleanUp();
     for (let i = 0; i < 4; i++) {
         let characterID = "0";
@@ -110,15 +104,39 @@ async function init() {
         await getFileURL(characterID)
         .then(res => {
             if (!res) throw new Error('Failed to fetch.');
-            generateCharacterBox(res, Number(characterID), i);
+            characterSrcMap[characterID] = res;
         })
         .catch(err => {
             console.log('Error:' + err.message);
         })
     }
+    console.log(characterSrcMap);
+
+    for (let key in characterSrcMap) {
+        generateCharacter(characterSrcMap[key], key, times++);
+    }
+
     console.log('Job finished.');
 }
 
+async function clickEvent() {
+    if (islocked) {
+        console.log('Locked.');
+        return
+    }
+    islocked = true;
+    ranButton.style.filter = 'grayscale(100%)';
+
+    try{
+        await randomCharacter();
+    } finally {
+        islocked = false;
+        ranButton.style.filter = 'grayscale(0%)';
+    }
+}
+
+let islocked = false;
+
 ranButton.addEventListener('click', () => {
-    init();
+    clickEvent();
 })

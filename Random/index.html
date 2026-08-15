@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/phone.css" media="(max-width: 768px)">
     <link rel="icon" href="../img/Icon.ico">
     <title>(实验性页面)随机角色</title>
 </head>
@@ -14,14 +15,35 @@
             <div class="Character-Container">
                 <div id="Character-Container">
                     <!--Here is the characters-->
+                    <div class="Character">
+                        <img class="Character-Img" alt="">
+                        <span class="characterText">您的座次为一号位</span>
+                        <span class="characterText Player-Character">暂无角色</span>
+                    </div>
+                    <div class="Character">
+                        <img class="Character-Img" alt="">
+                        <span class="characterText">您的座次为二号位</span>
+                        <span class="characterText Player-Character">暂无角色</span>
+                    </div>
+                    <div class="Character">
+                        <img class="Character-Img" alt="">
+                        <span class="characterText">您的座次为三号位</span>
+                        <span class="characterText Player-Character">暂无角色</span>
+                    </div>
+                    <div class="Character">
+                        <img class="Character-Img" alt="">
+                        <span class="characterText">您的座次为四号位</span>
+                        <span class="characterText Player-Character">暂无角色</span>
+                    </div>
                 </div>
             </div>
             <div id="Start-Button">点击开始随机角色</div>
         </div>
-        <div style="position:absolute;bottom:4vh;font-family:'AstroFont';-webkit-user-select: none;">
-            <div style="align-items:center;display:flex;justify-content:center;margin:0 auto;">页面提供人:</div>
-            <div style="align-items:center;display:flex;justify-content:center;margin:0 auto;">Shichigatsu_Yuki(9aQ7xpm)</div>
-        </div>
+    </div>
+    <div class="watermark-Box">
+        <div class="watermark">页面提供人:</div>
+        <div class="watermark">Shichigatsu_Yuki(9aQ7xpm)</div>
+        <div class="watermark">Version: 0.2.1702</div>
     </div>
     <script src="script.js"></script>
 </body>

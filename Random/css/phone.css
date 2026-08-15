@@ -1,0 +1,24 @@
+/* this is a patch which is used to fix some problems when clients visit the website in narrow screen */
+.Title-Text {
+    font-size: 175%;
+}
+
+#Character-Container {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    min-width: 80%;
+    margin: 1%;
+}
+
+.watermark-Box {
+    zoom: 0.8;
+}
+
+.characterText {
+    font-size: 80%;
+}
+
+#Start-Button {
+    font-size: 100%;
+    border: 2px solid black;
+}
