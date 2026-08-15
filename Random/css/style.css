@@ -118,11 +118,12 @@ body {
     font-family: '荆南波波黑';
     -webkit-user-select: none;
     align-items: center;
+    margin: 10px;
 }
 
 .Character img {
-    width: 80px;
-    height: 80px;
+    width: 120px;
+    height: 120px;
     border: 3px solid #FF1796;
     border-radius: 100px;
 }
@@ -144,4 +145,30 @@ body {
     display:flex;
     justify-content:center;
     margin:0 auto;
+}
+
+#ChangeBackground-Button {
+    display: flex;
+    z-index: 5;
+    position: absolute;
+    min-width: 55px;
+    aspect-ratio: 1/1;
+    border: 2px solid #000;
+    border-radius: 50%;
+    right: 1vh;
+    bottom: 4vh;
+    color: white;
+    -webkit-text-stroke: 1px black;
+    justify-content: center;
+    align-items: center;
+    background-color: #FF1796;
+    -webkit-user-select: none;
+}
+
+#ChangeBackground-Button:hover {
+    background-color: #88FF00;
+}
+
+#ChangeBackground-Button:active {
+    transform: scale(0.9);
 }

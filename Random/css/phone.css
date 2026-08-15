@@ -10,6 +10,15 @@
     margin: 1%;
 }
 
+.Character {
+    margin: 0;
+}
+
+.Character img {
+    width: 80px;
+    height: 80px;
+}
+
 .watermark-Box {
     zoom: 0.8;
 }
