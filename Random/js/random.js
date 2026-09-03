@@ -37,7 +37,9 @@ const charaMap = {
     "301" : "超绝最可爱天使酱",
     "302" : "主播女孩",
     "303" : "吉尔·斯汀雷",
-    "304" : "多萝西·海兹"
+    "304" : "多萝西·海兹",
+    "305" : "远野汉娜",
+    "306" : "橘雪莉"
 };
 
 // Provide Account-Head Photo
@@ -68,8 +70,8 @@ async function getFileURL(ID = '102') {
 
 function randomNumber2string(){
     const rand = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
-    const choice = rand(1, 33);
-    let result = choice <= 29 ? rand(101, 129) : rand(301, 304);
+    const choice = rand(1, 35);
+    let result = choice <= 29 ? rand(101, 129) : rand(301, 306);
     return String(result)
 }
 
