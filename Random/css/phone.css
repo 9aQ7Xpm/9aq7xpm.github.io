@@ -27,7 +27,7 @@
     font-size: 80%;
 }
 
-#Start-Button {
+.Button {
     font-size: 100%;
     border: 2px solid black;
 }

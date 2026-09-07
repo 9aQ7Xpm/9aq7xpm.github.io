@@ -35,6 +35,7 @@ body {
     align-items: center;
     background-color: rgba(255, 255, 255, 0.8);
     padding: 1%;
+    font-family: '荆南波波黑';
 }
 
 .Random-Container {
@@ -72,7 +73,7 @@ body {
     margin: 1%;
 }
 
-#Start-Button {
+.Button {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -111,6 +112,15 @@ body {
 #Start-Button:active {
     transform: scale(0.9);
 }
+
+#Start-Map-Button:hover {
+    background-color: #88FF00;
+}
+
+#Start-Map-Button:active {
+    transform: scale(0.9);
+}
+
 
 .Character {
     display: flex;
@@ -171,4 +181,21 @@ body {
 
 #ChangeBackground-Button:active {
     transform: scale(0.9);
+}
+
+.Map-Container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-height: 0%;
+    border: 1px solid black;
+    border-radius: 20px;
+    margin: 1%;
+    overflow: hidden;
+}
+
+.mapText {
+    display: flex;
+    margin: 0 auto;
+    padding: 5px;
 }

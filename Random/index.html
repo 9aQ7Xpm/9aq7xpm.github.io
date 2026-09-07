@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/phone.css" media="(max-width: 768px)">
     <link rel="icon" href="../img/Icon.ico">
-    <title>(实验性页面)随机角色</title>
+    <title>星引擎随机工具</title>
 </head>
 <body>
     <div class="Center-Container">
@@ -37,7 +37,15 @@
                     </div>
                 </div>
             </div>
-            <div id="Start-Button">点击开始随机角色</div>
+            <div class="Button" id="Start-Button">点击开始随机角色</div>
+        </div>
+        <div class="Random-Container">
+            <span class="Title-Text">星引擎随机地图</span>
+            <div class="Map-Container">
+                <img src="https://patchwiki.biligame.com/images/starengine/b/bb/b11cjjrs51ai0xhzsfwka79m9drer3k.png" alt="">
+                <span class="mapText">本次随机到的地图为：</span>
+            </div>
+            <div class="Button" id="Start-Map-Button">点击开始随机地图</div>
         </div>
     </div>
     <div class="watermark-Box">
@@ -47,7 +55,9 @@
     </div>
     <div id="ChangeBackground-Button">切换<br>背景</div>
     <script src="./js/random.js"></script>
+    <script src="./js/random-map.js"></script>
     <script src="./js/background.js"></script>
+    <script src="./js/page.js"></script>
     <script src="./js/alert.js"></script>
 </body>
 </html>
