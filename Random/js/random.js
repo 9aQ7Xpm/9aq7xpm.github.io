@@ -91,7 +91,7 @@ function cleanUp(){
 
 async function randomCharacter() {
     let examineMap = [];
-    let characterSrcMap = {};
+    let characterSrcMap = [];
     let times = 0;
     cleanUp();
     for (let i = 0; i < 4; i++) {
@@ -106,7 +106,7 @@ async function randomCharacter() {
         await getFileURL(characterID)
         .then(res => {
             if (!res) throw new Error('Failed to fetch.');
-            characterSrcMap[characterID] = res;
+            characterSrcMap.push([characterID, res]);
         })
         .catch(err => {
             console.log('Error:' + err.message);
@@ -114,8 +114,8 @@ async function randomCharacter() {
     }
     console.log(characterSrcMap);
 
-    for (let key in characterSrcMap) {
-        generateCharacter(characterSrcMap[key], key, times++);
+    for (let key of characterSrcMap) {
+        generateCharacter(key[1], key[0], times++);
     }
 
     console.log('Job finished.');
