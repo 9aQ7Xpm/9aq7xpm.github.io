@@ -2,6 +2,7 @@ const ranButton = document.querySelector('#Start-Button');
 const charaContainer = document.querySelector('#Character-Container'); 
 const charaImg = document.querySelectorAll('.Character-Img');
 const playerText = document.querySelectorAll('.Player-Character');
+const lastCharacter = document.querySelector('#Last-Character-Record');
 // certain way which is more clever should be used to replace such an idiot hash map i think
 // wtf can someone type such a long && useless one!?
 const charaMap = {
@@ -89,7 +90,19 @@ function cleanUp(){
     console.log('Make cleanup succeed.');
 }
 
+function recordLastRandom(){
+    if (charaImg[0].src === '') return
+    let pushHtml = ``;
+    for (let i = 0;i < 4;i++) {
+        pushHtml += `
+            <img src="${charaImg[i].src}" alt="">
+        `;
+    }
+    lastCharacter.innerHTML = pushHtml;
+}
+
 async function randomCharacter() {
+    recordLastRandom();
     let examineMap = [];
     let characterSrcMap = [];
     let times = 0;
