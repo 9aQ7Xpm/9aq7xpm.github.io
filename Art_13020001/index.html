@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://unpkg.com/@esotericsoftware/spine-player@4.3.*/dist/spine-player.css">
+    <script src="https://unpkg.com/@esotericsoftware/spine-player@4.3.*/dist/iife/spine-player.js"></script>
+</head>
+<body>
+    <style>
+        @import url("https://fontsapi.zeoseven.com/298/main/result.css");
+        .btn{
+            background-color: #96ff37;
+        }
+        .hand-card {
+            display: inline-block;  
+        }
+        #Card {
+            position: relative;
+            width: 362px;
+            height: 530px;
+        }
+        #Card0 {
+            position: absolute;
+            top: 15px;
+            left: 16px;
+        }
+        #Card00-box-box {
+            position: absolute;
+            display: grid;
+            top: 75px;
+            left: 16px;
+            width: 53px;
+            justify-items: center;
+            gap: 2px;
+        }
+        #Card00-box {
+            position: relative;
+        }
+        #Card00 {
+            position: absolute;
+            top: 6px;
+            left: 6px;
+        }
+        #Card1 {
+            position: absolute;
+            top: 310px;
+            left: 70px;
+            width: 222px;
+            height: 55px;
+        }
+        #Card1Font {
+            position: absolute;
+            top: 310px;
+            left: 70px;
+            width: 222px;
+            height: 55px;
+            color:white;
+            font-size: 23px;
+            letter-spacing: 0.2em;
+            font-weight: bold;
+            display: grid;
+            align-items: center;
+            justify-items: center;
+            text-shadow: 3px 0 0 #000, 2.77px 1.15px 0 #000, 2.12px 2.12px 0 #000, 1.15px 2.77px 0 #000, 0 3px 0 #000, -1.15px 2.77px 0 #000, -2.12px 2.12px 0 #000, -2.77px 1.15px 0 #000, -3px 0 0 #000, -2.77px -1.15px 0 #000, -2.12px -2.12px 0 #000, -1.15px -2.77px 0 #000, 0 -3px 0 #000, 1.15px -2.77px 0 #000, 2.12px -2.12px 0 #000, 2.77px -1.15px 0 #000;
+        }
+        #CardFont {
+            position: absolute;
+            top: 365px;
+            left: 30px;
+            width: 310px;
+            height: 130px;
+            font-size: 17px;
+            letter-spacing: 0.2em;
+            font-weight: bold;
+            display: grid;
+            color: #FFF;
+            line-height: 1.5em;
+        }
+        #CardFont2 {
+            position: absolute;
+            top: 502px;
+            left: 93px;
+            width: 232px;
+            height: 13px;
+            font-size: 10px;
+            letter-spacing: 0.1em;
+            font-weight: bold;
+            display: grid;
+            color: #FFF;
+        }
+        #Card2 {
+            position: absolute;
+            top: 353px;
+            left: 6.5px;
+        }
+        #CardStar {
+            position: absolute;
+            bottom: 30px;
+            right: 25px;
+        }
+    </style>
+    
+    <div class="hand-card" id="character-card-preview" style="position: relative;overflow: hidden;">
+        <div id="player-container" style="width: 140%; height: 800px;position: absolute;left:-32%;top:-18%;clip-path: inset(100px 0 300px 130px);"></div>
+        <div id="Card" style="font-family:'荆南波波黑';">
+            <div id="CardFront">
+                <img alt="UT CardFront 75001.png" 
+                src="https://patchwiki.biligame.com/images/starengine/thumb/8/88/r4ucxyldzbh5w8m2lmtal1zf5qgnp3n.png/362px-UT_CardFront_75001.png" 
+                decoding="async" loading="lazy" width="362" height="529" 
+                srcset="https://patchwiki.biligame.com/images/starengine/a/ac/j5b4icp4rj73in30hys4jsdi0vqmhwl.png" 
+                data-file-width="780" data-file-height="1140">
+            </div>
+            <div id="CardStar">
+                <img alt="Card Star.png" 
+                src="https://patchwiki.biligame.com/images/starengine/thumb/6/6c/29ghqdw72g3zo7o190no2ye9si4mp56.png/32px-Card_Star.png" 
+                decoding="async" loading="lazy" width="32" height="33" 
+                srcset="https://patchwiki.biligame.com/images/starengine/6/6c/29ghqdw72g3zo7o190no2ye9si4mp56.png 1.5x" 
+                data-file-width="42" data-file-height="43">
+            </div>
+            <div id="Card0" class="Card0" style="z-index:-1">
+                <img alt="UT HandCard 20002.png" 
+                src="./Art_13020001/SpineHandCard_13020001/UT_IAltArt_13020001.png" 
+                decoding="async" loading="lazy" width="330" height="327" 
+                srcset="./Art_13020001/SpineHandCard_13020001/UT_IAltArt_13020001.png" 
+                data-file-width="404" data-file-height="400">
+            </div>
+            <div id="Card00-box-box" style="top: 66px;">
+                <div id="Card00-box">
+                    <img alt="Card00 Effect none.png" 
+                    src="https://patchwiki.biligame.com/images/starengine/thumb/1/17/lnzp5bf0n8u4lpnwd28539jcy011421.png/40px-Card00_Effect_none.png" 
+                    decoding="async" loading="lazy" width="40" height="17" 
+                    srcset="https://patchwiki.biligame.com/images/starengine/thumb/1/17/lnzp5bf0n8u4lpnwd28539jcy011421.png/60px-Card00_Effect_none.png 1.5x, https://patchwiki.biligame.com/images/starengine/thumb/1/17/lnzp5bf0n8u4lpnwd28539jcy011421.png/80px-Card00_Effect_none.png 2x" 
+                    data-file-width="94" 
+                    data-file-height="41">
+                </div>
+            </div>
+            <div id="Card0">
+                <img alt="Card0 Effect.png" 
+                src="https://patchwiki.biligame.com/images/starengine/thumb/6/6b/hlhdgyb94br5w2kx31rd4y0f2bwms8c.png/53px-Card0_Effect.png" 
+                decoding="async" loading="lazy" width="53" height="53" 
+                srcset="https://patchwiki.biligame.com/images/starengine/thumb/6/6b/hlhdgyb94br5w2kx31rd4y0f2bwms8c.png/80px-Card0_Effect.png 1.5x, https://patchwiki.biligame.com/images/starengine/thumb/6/6b/hlhdgyb94br5w2kx31rd4y0f2bwms8c.png/106px-Card0_Effect.png 2x" 
+                data-file-width="116" 
+                data-file-height="116">
+            </div>
+            <div id="Card1">
+                <img alt="Card1 Effect.png" 
+                src="https://patchwiki.biligame.com/images/starengine/thumb/4/47/qhwd14jh6h83r8ialni9awehjijbp2k.png/222px-Card1_Effect.png" 
+                decoding="async" 
+                loading="lazy" width="222" height="54" 
+                srcset="https://patchwiki.biligame.com/images/starengine/thumb/4/47/qhwd14jh6h83r8ialni9awehjijbp2k.png/333px-Card1_Effect.png 1.5x, https://patchwiki.biligame.com/images/starengine/thumb/4/47/qhwd14jh6h83r8ialni9awehjijbp2k.png/444px-Card1_Effect.png 2x" 
+                data-file-width="503" data-file-height="122">
+            </div>
+            <div id="Card1Font">巧克力蛋糕</div>
+            <div id="CardFont">恢复自身2点生命值</div>
+            <div id="CardFont2">CARD-010</div>
+            <div style="justify-items: end;" id="CardFont2">喜欢甜点的都是好人</div>
+        </div>
+    </div>
+    <script>
+        new spine.SpinePlayer("player-container", {
+            skelUrl: "./Art_13020001/SpineHandCard_13020001/SpineHandCard_13020001.skel",
+            atlasUrl: "./Art_13020001/SpineHandCard_13020001/SpineHandCard_13020001.atlas",
+            showControls: false,
+            alpha: true,
+            backgroundColor: "#00000000",
+            showContents: true,
+            success: function (player) {
+                var names = player.skeleton.data.animations.map(function (a) { return a.name; });
+                console.log("可用的动画名：", names);
+                if (names.length > 0) {
+                    player.setAnimation(names[0]);
+                }
+                var slot = player.skeleton.findSlot("你的光效插槽名");
+                if (slot) {
+                    slot.color.a = 1;
+                    var attachment = player.skeleton.getAttachment(slot.data.index, "附件名");
+                    if (attachment) {
+                        slot.setAttachment(attachment);
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
